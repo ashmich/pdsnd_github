@@ -20,12 +20,13 @@ def get_filters():
     
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     # use .lower() to ensure that user is able to input characters whether uppercase or lowercase 
-    valid_cities = ('chicago','new york city', 'washington')
+    
+    CITY_DATA = ('chicago','new york city', 'washington')
     wrong_city = True
     while wrong_city:
         city = input("Key in chicago, new york city or washington: ") 
         city = city.lower()
-        if city in valid_cities:
+        if city in CITY_DATA:
             break  
         else:
             print('Incorrect city, please select either chicago, new york city, or washington')
@@ -191,8 +192,8 @@ def user_stats(df):
     
     # TO DO: Display counts of gender
     try:
-        nan_values_in_gender = df["Gender"].isna().sum()
-        print("The NaN values in gender are: ", "{:,0f}".format(nan_values_in_gender)) 
+        nan_gender = df["Gender"].isna().sum()
+        print("The NaN values in gender are: ", "{:,0f}".format(nan_gender)) 
 
         male_fem = df["Gender"].value_counts()
         male_fem_dict = male_fem.to_dict()
