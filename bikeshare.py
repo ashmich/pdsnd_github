@@ -191,8 +191,8 @@ def user_stats(df):
     
     # TO DO: Display counts of gender
     try:
-        nan_values_in_gender = df["Gender"].isna().sum()
-        print("The NaN values in gender are: ", "{:,0f}".format(nan_values_in_gender)) 
+        nan_gender = df["Gender"].isna().sum()
+        print("The NaN values in gender are: ", "{:,0f}".format(nan_gender)) 
 
         male_fem = df["Gender"].value_counts()
         male_fem_dict = male_fem.to_dict()
