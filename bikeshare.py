@@ -233,6 +233,8 @@ def main():
         user_stats(df)
         display_data(df)
 
+#prompts user if they want to see five lines of raw data
+
 def display_data(df):
     index=0
     user_input=input('would you like to display 5 rows of raw data? ').lower()
